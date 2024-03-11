@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your weather application</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background-image: url("https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        background-size: cover;
+        background-position: center;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .application {
+        border: hidden 1px black;
+        border-radius: 10px;
+        background-color: rgba(245, 245, 245, 0.6);
+        width: 50%;
+        display: block;
+        margin: 100px auto;
+        box-shadow: 5px 23px 40px 5px rgba(55, 103, 122, 0.9);
+      }
+
+      form {
+        padding: 20px 50px;
+      }
+
+      .city {
+        width: 180px;
+        height: 20px;
+        border-radius: 15px;
+        padding: 15px;
+        border: 1px solid whitesmoke;
+        background: #b6d6ef;
+        color: antiquewhite;
+      }
+
+      .search-button {
+        height: 40px;
+        padding: 10px;
+        border-radius: 15px;
+        border: 1px solid whitesmoke;
+        background: #8da9bf;
+        color: whitesmoke;
+        transition: all 400ms ease-in-out;
+      }
+
+      .search-button:hover {
+        background: whitesmoke;
+        color: #8da9bf;
+      }
+
+      h1 {
+        margin-left: 50px;
+        margin-top: 50px;
+        font-weight: bold;
+      }
+
+      .currentTemp {
+        font-size: 42px;
+        display: flex;
+        justify-content: end;
+        margin-right: 70px;
+        margin-top: -75px;
+        font-weight: bold;
+      }
+
+      h3 {
+        padding: 50px;
+      }
+
+      .dateSection {
+        position: relative;
+        top: -100px;
+      }
+
+      h2 {
+        text-align: right;
+        margin-right: 70px;
+      }
+
+      footer {
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 0;
+        border: hidden 1px black;
+        border-radius: 10px;
+        background-color: rgba(245, 245, 245, 0.6);
+        width: 50%;
+        display: block;
+        margin: 100px auto;
+        box-shadow: 5px 23px 40px 5px rgba(55, 103, 122, 0.9);
+      }
+    </style>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="application">
+      <form id="searchCity">
+        <input
+          type="text"
+          placeholder="Enter your city"
+          class="city"
+          id="city"
+        />
+        <input type="submit" value="Search" class="search-button" />
+      </form>
+      <header>
+        <h1 id="currentCity">Lisbon 🌎</h1>
+        <section class="currentTemp" id="currentTemp">18ºC</section>
+        <h2>
+          <span class="currentDescription" id="currentDescription">
+            ☁ Cloudy
+          </span>
+        </h2>
+        <h3>
+          <div class="dateSection" id="dateSection">
+            <span class="weekday" id="weekday">Tuesday</span>
+            <span class="hour" id="hour">15:30</span>
+            <div class="date" id="date">02.02.2022</div>
+          </div>
+
+          <div class="weatherSection" id="weatherSection">
+            <br />
+            💧 Humidity:
+            <span class="number-values" id="humidityValue"> 87% </span>
+            <br />
+            🍃 Wind:
+            <span class="number-values" id="windValue"> 7.2km/h </span>
+          </div>
+        </h3>
+      </header>
+    </div>
+    <footer>
+      This project was coded by
+      <a
+        href="https://www.shecodes.io/graduates/114333-malgorzata-chudzinska"
+        id="coder"
+        target="_blank"
+        >Malgorzata Chudzinska</a
+      >
+      and is on
+      <a href="https://github.com/" id="Git" target="_blank">GitHub </a>
+      and hosted on
+      <a href="https://netlify.com" id="Net" target="_blank"> Netlify</a>
+    </footer>
+    <script src="script\script.js"></script>
+  </body>
+</html>
