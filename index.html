@@ -31,21 +31,29 @@
       <main>
         <h2>
           <div class="dateSection" id="dateSection">
-            <span class="weekday" id="weekday">Tuesday</span>
-            <span class="hour" id="hour">15:30</span>
-            <div class="date" id="date">02.02.2022</div>
+            <span class="weekday" id="weekday"></span>
+            <span class="hour" id="hour"></span>
+            <div class="date" id="date"></div>
           </div>
-          <div class="currentDescription" id="currentDescription">☁ Cloudy</div>
+          <div class="weatherIcon" id="weatherIcon">
+            <img
+              src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/shower-rain-day.png"
+              class="Icon"
+            />
+          </div>
         </h2>
         <h3>
-          <div class="weatherSection" id="weatherSection">
-            <br />
-            💧 Humidity:
-            <span class="number-values" id="humidityValue"> 87% </span>
-            <br />
-            🍃 Wind:
-            <span class="number-values" id="windValue"> 7.2km/h </span>
-          </div>
+          <section class="weatherSection" id="weatherSection">
+            <div class="addInfo" id="addInfo">
+              <br />
+              💧 Humidity:
+              <span class="number-values" id="humidityValue"> 87% </span>
+              <br />
+              🍃 Wind:
+              <span class="number-values" id="windValue"> 7.2km/h </span>
+            </div>
+            <div class="currentDescription" id="currentDescription">cloudy</div>
+          </section>
         </h3>
       </main>
     </div>

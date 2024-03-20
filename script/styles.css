@@ -61,17 +61,33 @@ h1 {
 .currentTemp {
   font-size: 42px;
   display: flex;
-  margin-top: 60px;
+  margin-top: 55px;
   margin-right: 70px;
   font-weight: bold;
 }
 
+.weatherIcon {
+  margin-top: -20px;
+}
+
 h3 {
   padding: 0 50px 50px;
+  margin-top: -20px;
 }
 
 .dateSection {
   font-size: 20px;
+}
+
+.weatherSection {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 0px;
+}
+
+.currentDescription {
+  padding: 10px 30px;
+  margin-right: 10px;
 }
 
 h2 {
@@ -80,6 +96,7 @@ h2 {
   margin-right: 70px;
   margin-left: 50px;
   margin-top: 0;
+  margin-bottom: 0;
 }
 
 footer {

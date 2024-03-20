@@ -1,5 +1,4 @@
 let now = new Date();
-console.log(now);
 
 let days = [
   "Sunday",
@@ -64,6 +63,13 @@ function displayTemperature(response) {
   let currentWind = document.querySelector("#windValue");
   let wind = Math.round(response.data.wind.speed);
   currentWind.innerHTML = `${wind} km/h`;
+
+  let icon = document.querySelector("#weatherIcon");
+  let currentIcon = response.data.condition.icon_url;
+  icon.innerHTML = `<img
+              src="${currentIcon}"
+              class="Icon"
+            />`;
 }
 
 function search(event) {
