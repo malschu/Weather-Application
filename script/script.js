@@ -53,7 +53,6 @@ function displayTemperature(response) {
 
   let currentDescription = document.querySelector("#currentDescription");
   let description = response.data.condition.description;
-  //let descriptionIcon = response.data.condition.icon;
   currentDescription.innerHTML = `${description}`;
 
   let currenthumidity = document.querySelector("#humidityValue");

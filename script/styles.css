@@ -99,6 +99,16 @@ h2 {
   margin-bottom: 0;
 }
 
+.weather-forecast {
+  padding: 20px;
+  text-align: center;
+}
+
+.forecastDay,
+.forecastMax {
+  font-weight: bold;
+}
+
 footer {
   font-size: 14px;
   text-align: center;
