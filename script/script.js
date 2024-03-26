@@ -97,3 +97,34 @@ if (hours < 12) {
   bodyImage.style.backgroundImage =
     'url("https://images.unsplash.com/photo-1464069668014-99e9cd4abf16?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")';
 }
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+    <div class="row">
+          <div class="firstDay">
+            <div class="forecastDay">${day}</div>
+            <img
+              src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/shower-rain-day.png"
+              alt=""
+              width="72"
+            />
+            <div class="forecastMaxMin">
+              <span class="forecastMax">18º</span>
+              <span class="forecastMin">12º</span>
+            </div>
+          </div>
+        </div>
+`;
+  });
+
+  forecastElement.innerHTML = forecastHtml;
+}
+
+displayForecast();

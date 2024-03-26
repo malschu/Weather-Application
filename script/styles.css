@@ -102,6 +102,8 @@ h2 {
 .weather-forecast {
   padding: 20px;
   text-align: center;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .forecastDay,
