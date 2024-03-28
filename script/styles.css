@@ -66,12 +66,14 @@ h1 {
   font-weight: bold;
 }
 
-.weatherIcon {
+.Icon {
   margin-top: -20px;
+  height: 100px;
+  width: 100px;
 }
 
 h3 {
-  padding: 0 50px 50px;
+  padding: 0 50px 20px;
   margin-top: -20px;
 }
 
@@ -82,21 +84,15 @@ h3 {
 .weatherSection {
   display: flex;
   justify-content: space-between;
-  margin-right: 0px;
-}
-
-.currentDescription {
-  padding: 10px 30px;
-  margin-right: 10px;
+  margin-right: 20px;
+  margin-top: 25px;
 }
 
 h2 {
   display: flex;
   justify-content: space-between;
-  margin-right: 70px;
+  margin-right: 50px;
   margin-left: 50px;
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 .weather-forecast {
