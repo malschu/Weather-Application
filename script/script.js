@@ -25,6 +25,8 @@ if (minutes < 10) {
 let currenthour = document.querySelector("#hour");
 currenthour.innerHTML = `${hours}:${minutes}`;
 
+getForecast();
+
 let dayNumber = [now.getDate()];
 let year = now.getFullYear();
 let months = [
@@ -69,6 +71,7 @@ function displayTemperature(response) {
               src="${currentIcon}"
               class="Icon"
             />`;
+  getForecast(response.data.city);
 }
 
 function search(event) {
@@ -98,7 +101,16 @@ if (hours < 12) {
     'url("https://images.unsplash.com/photo-1464069668014-99e9cd4abf16?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")';
 }
 
-function displayForecast() {
+function getForecast(city) {
+  let apiKey = "bb038cb05o3654etef561d10bfa5ef4f";
+  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+  axios(apiURL).then(displayForecast);
+  console.log(apiURL);
+}
+
+function displayForecast(response) {
+  console.log(response.data);
+
   let forecastElement = document.querySelector("#forecast");
   let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
   let forecastHtml = "";
@@ -126,5 +138,3 @@ function displayForecast() {
 
   forecastElement.innerHTML = forecastHtml;
 }
-
-displayForecast();
