@@ -108,32 +108,45 @@ function getForecast(city) {
   console.log(apiURL);
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
+}
+
 function displayForecast(response) {
   console.log(response.data);
 
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
   let forecastHtml = "";
 
-  days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `
+  response.data.daily.forEach(function (day, index) {
+    if (index > 0 && index < 6) {
+      forecastHtml =
+        forecastHtml +
+        `
     <div class="row">
           <div class="firstDay">
-            <div class="forecastDay">${day}</div>
-            <img
-              src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/shower-rain-day.png"
+            <div class="forecastDay">${formatDay(day.time)}</div>
+            <img 
+              src="${day.condition.icon_url}"
               alt=""
               width="72"
+              class="forecastIcon"
             />
             <div class="forecastMaxMin">
-              <span class="forecastMax">18º</span>
-              <span class="forecastMin">12º</span>
+              <span class="forecastMax">${Math.round(
+                day.temperature.maximum
+              )}ºC</span>
+              <span class="forecastMin">${Math.round(
+                day.temperature.minimum
+              )}ºC</span>
             </div>
           </div>
         </div>
 `;
+    }
   });
 
   forecastElement.innerHTML = forecastHtml;
