@@ -83,7 +83,12 @@ function search(event) {
   let apiKey = "bb038cb05o3654etef561d10bfa5ef4f";
   let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
   axios.get(apiURL).then(displayTemperature);
-  console.log(apiURL);
+}
+
+function defaultCity(city) {
+  let apiKey = "bb038cb05o3654etef561d10bfa5ef4f";
+  let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+  axios.get(apiURL).then(displayTemperature);
 }
 
 let searchCity = document.querySelector("#searchCity");
@@ -105,7 +110,6 @@ function getForecast(city) {
   let apiKey = "bb038cb05o3654etef561d10bfa5ef4f";
   let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
   axios(apiURL).then(displayForecast);
-  console.log(apiURL);
 }
 
 function formatDay(timestamp) {
@@ -151,3 +155,6 @@ function displayForecast(response) {
 
   forecastElement.innerHTML = forecastHtml;
 }
+
+getForecast("Lisbon");
+defaultCity("Lisbon");
